@@ -76,6 +76,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ## Overview
 
+[City Explorer](https://city-explorer-ms.netlify.app/)
 
 ## Getting Started
 <!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
@@ -90,3 +91,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
+07 Apr:  
+
+- Michelle's code review for creating form
+- Joe Pennock helped me to get my site active on netlify

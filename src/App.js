@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 import CitySearch from './CitySearch';
 
@@ -18,12 +19,15 @@ class App extends React.Component {
     this.setState({haveWeSearchedYet: false});
   }
 
-  handleSearch = (citySearchedFor) => {
+  handleSearch = async(citySearchedFor) => {
     console.log('searched',citySearchedFor);
     this.setState({
       haveWeSearchedYet: true,
       citySearchedFor: citySearchedFor
-    })
+    });
+    let locationiqResponse = await axios.get(`https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATIONIQ_KEY}&q=${citySearchedFor}=json`);
+    console.log(locationiqResponse);
+
   }
   
   render() {
