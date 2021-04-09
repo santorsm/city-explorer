@@ -95,3 +95,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 - Michelle's code review for creating form
 - Joe Pennock helped me to get my site active on netlify
+
+08 Apr:  
+
+- Michael helped me figure out a 404 error that I encountered
+- Code review
