@@ -26,7 +26,7 @@ class CitySearch extends React.Component {
           <Form.Control
             className="mb-2 mr-sm-2"
             id="inlineFormInputName2"
-            placeholder="enter city"
+            placeholder="enter city to explore"
             onChange={this.props.updateCity}
           />
           <Button variant="primary" type="submit" className="mb-2">
