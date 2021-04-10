@@ -1,4 +1,7 @@
-import React from 'react'
+import React from 'react';
+
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 
 class CitySearch extends React.Component {
   constructor(props) {
@@ -9,15 +12,30 @@ class CitySearch extends React.Component {
 
   handleFormSumbitted = (event) => {
     event.preventDefault();
-    this.props.handleSearch(this.textInput.current.value);
+    this.props.handleSearch();
+
   }
 
   render() {
     return (
-      <form onSubmit={this.handleFormSumbitted}>
-        <input type="text" ref={this.textInput}/>
-        <input type="submit"/>
-      </form>
+      <>
+        <Form onSubmit={this.handleFormSumbitted} inline>
+          <Form.Label htmlFor="city" srOnly>
+            City name
+          </Form.Label>
+          <Form.Control
+            className="mb-2 mr-sm-2"
+            id="inlineFormInputName2"
+            placeholder="enter city to explore"
+            onChange={this.props.updateCity}
+          />
+          <Button variant="primary" type="submit" className="mb-2">
+            Explore!
+          </Button>
+        </Form>
+        <br/>
+
+      </>
     )
   }
 }
