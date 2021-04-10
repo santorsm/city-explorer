@@ -25,7 +25,6 @@ class App extends React.Component {
 
 
   handleSearch = async() => {
-    try{
       let locationiqResponse = await axios.get(`https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATIONIQ_KEY}&q=${this.state.searchResults}&format=json`);
 
       console.log(locationiqResponse);
@@ -33,12 +32,6 @@ class App extends React.Component {
         cityData: locationiqResponse.data[0]
       });
 
-
-    } catch (err) {
-      console.log(err);
-      this.setState({error: `${err.message}: $err.response.data.error`});
-    }
-    
   }  
   
   render() {
