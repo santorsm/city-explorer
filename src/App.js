@@ -14,7 +14,8 @@ class App extends React.Component {
     this.state = {
        cityData: '',
        searchResults: '',
-       error: ''
+       error: '',
+       dailyWeatherData: []
     };
   }
 
