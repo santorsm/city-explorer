@@ -57,11 +57,7 @@ class App extends React.Component {
         
         {this.state.cityData.lat !== undefined ?
         <Image src={`https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_KEY}&center=${this.state.cityData.lat},${this.state.cityData.lon}&zoom=12&size=<200>x<200> fluid`}/> : null}
-        {/* {this.state.cityData.lat !== undefined ? <ListGroup variant="flush">
-          <ListGroup.Item>City:   {this.state.cityData.display_place}</ListGroup.Item>
-          <ListGroup.Item>Latitude: {this.state.cityData.lat}</ListGroup.Item>
-          <ListGroup.Item>Longitude: {this.state.cityData.lon}</ListGroup.Item>
-        </ListGroup> : ''} */}
+
         <br/>
         {this.state.cityData.lat !== undefined ?
         <Jumbotron>

@@ -1,5 +1,5 @@
 import React from 'react';
-import Jumbotron from 'react-bootstrap/Jumbotron';
+
 import ListGroup from 'react-bootstrap/ListGroup';
 
 class Weather extends React.Component {
