@@ -19,7 +19,8 @@ class App extends React.Component {
        lat: '',
        lon: '',
        error: '',
-       dailyWeatherData: []
+       dailyWeatherData: [],
+       cityMovieData: []
     };
   }
 
@@ -34,10 +35,6 @@ class App extends React.Component {
     try{
       let locationiqResponse = await axios.get(`https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATIONIQ_KEY}&q=${this.state.searchResults}&format=json`);
 
-      console.log('This is my location response', locationiqResponse);
-      console.log('This is my location city', locationiqResponse.data[0].display_name);
-      console.log('This is my location city lat', locationiqResponse.data[0].lat);
-      console.log('This is my location city lon', locationiqResponse.data[0].lon);
       this.setState({
         cityData: locationiqResponse.data[0].display_name,
         lat: locationiqResponse.data[0].lat,
@@ -45,7 +42,10 @@ class App extends React.Component {
       });
 
       this.cityWeatherForecastData(locationiqResponse.data[0].lat, locationiqResponse.data[0].lon)
-      console.log('CITY DATA', this.state.cityData);
+
+      console.log('Data for city >>>>>>', this.state.searchResults);
+      this.cityMovieData(this.state.searchResults);
+
     } catch (err) {
       console.log(err);
       this.setState({error: `${err.message}`});
@@ -60,21 +60,34 @@ class App extends React.Component {
           lon: lon
         }
       });
-      console.log('should be weather response', weatherResponse.data);
-      console.log('should be lat', this.state.lat);
+
       this.setState({
         dailyWeatherData: weatherResponse.data
       })
-      console.log('This is the one we are looking for:', this.state.dailyWeatherData);
+
     } catch (err) {
     console.log(err);
     this.setState({error: `${err.message}`});
     }
   }
 
+  cityMovieData = async (searchResults) => {
+    try{
+      const cityMovieData = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/movies`,{
+          params:{
+            city: this.state.searchResults
+          }
+        });
+      console.log(cityMovieData);
+      this.setState({
+        cityMovieData: cityMovieData.data
+      });
+    } catch (error) {
+      this.setState({error: error.message});
+    }
+  } 
   render() {
-    console.log(this.state);
-    console.log(this.state.dailyWeatherData)
+
     return (
       <>
         <h1>City Explorer</h1>
