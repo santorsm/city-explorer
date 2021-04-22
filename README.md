@@ -88,6 +88,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 <!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:
 
 01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
+04-21-2021 - Application fully functional displaying city location, 16 day weather weather
 
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
@@ -97,6 +98,12 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 - Joe Pennock helped me to get my site active on netlify
 
 08 Apr:  
+Michael helped me figure out a 404 error that I encountered
 
-- Michael helped me figure out a 404 error that I encountered
-- Code review
+From this date going forward, I've relied on code reviews and instructor exrta instruction sessions to help get my code to this point
+
+19 April
+Hexx King walked through my code with me and helped me to get the weather correctly from the api
+
+20 April
+Chance helped me to find my error in calling the movie api
