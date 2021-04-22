@@ -5,6 +5,7 @@ import Image from 'react-bootstrap/Image';
 
 import CitySearch from './CitySearch';
 import Weather from './Weather';
+import Movies from './Movies';
 
 import './App.css';
 import { Jumbotron } from 'react-bootstrap';
@@ -106,6 +107,8 @@ class App extends React.Component {
         {this.state.error ? <h3>{this.state.error}</h3> : ''}
         {this.state.dailyWeatherData !== undefined ?
         <Weather dailyWeatherData={this.state.dailyWeatherData}/> : ''}
+        {this.state.dailyWeatherData !== undefined ?
+        <Movies cityMovieData={this.state.cityMovieData}/> : ''}
       </>
     )
   }
