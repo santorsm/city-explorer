@@ -1,14 +1,15 @@
 import React from 'react';
-
+import WeatherDay from './WeatherDay';
 import ListGroup from 'react-bootstrap/ListGroup';
 
 class Weather extends React.Component {
   render() {
+    let weatherList = this.props.dailyWeatherData.map((dailyData, index) => (
+       <WeatherDay key={index} day={dailyData} date={dailyData.date} description={dailyData.description} low={dailyData.low} high={dailyData.high} />
+     ))
     return (
       <ListGroup>
-        {this.props.dailyWeatherData.map((dailyData, index) =>(
-          <ListGroup.Item key={index} day={dailyData}>{`${dailyData.date}: ${dailyData.description} -- Low: ${dailyData.low}F | High: ${dailyData.high}F`}</ListGroup.Item>
-        ))}
+        {weatherList}
       </ListGroup>
     )
   }
