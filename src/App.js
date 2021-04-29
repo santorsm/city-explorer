@@ -45,7 +45,7 @@ class App extends React.Component {
       this.cityWeatherForecastData(locationiqResponse.data[0].lat, locationiqResponse.data[0].lon)
 
       console.log('Data for city >>>>>>', this.state.searchResults);
-      // this.cityMovieData(this.state.searchResults);
+      this.cityMovieData(this.state.searchResults);
 
     } catch (err) {
       console.log(err);
